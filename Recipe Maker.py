@@ -449,6 +449,54 @@ def dynamic_date_meal(diet_preference, available_ingredients):
     }
 
 # ------------------------------
+# How To Use Section
+# ------------------------------
+
+import sys
+
+def display_help():
+    """Display the how-to-use guide when requested."""
+    print("""
+    🍽 HOW TO USE KITCHENATOR 🍽
+
+    1️⃣ Start the Kitchenator:
+       - Run the Python script: python kitchenator.py
+
+    2️⃣ Enter Your Profile Type:
+       - Choose one of the following:
+         student | student-athlete | busy professional
+
+    3️⃣ Choose Your Meal Type:
+       - Options:
+         Breakfast | Lunch | Dinner | Midday Snack | Pre-Gym Snack | Post Gym Snack | Chilling with BAE
+
+    4️⃣ Set Your Dietary Preference:
+       - Options:
+         vegetarian | non vegetarian | vegan | high protein | gluten-free | i eat everything
+
+    5️⃣ Provide Available Ingredients:
+       - Enter ingredients in the format:
+         Grain choice, Protein choice, Vegetable choice, Snack choice, Sauce choice, Drink choice
+       - Type 'none' if missing an ingredient.
+
+    6️⃣ Get Your Meal Plan:
+       - The Kitchenator will generate:
+         ✓ A meal name
+         ✓ A list of ingredients
+         ✓ Cooking instructions
+         ✓ Dietary compatibility
+         ✓ Who the meal is suitable for
+
+    7️⃣ Enjoy Your Meal! 🍽
+       - Follow the instructions and enjoy!
+    """)
+
+# Check if the user requested help via command-line argument
+if "--help" in sys.argv:
+    display_help()
+    sys.exit()
+
+# ------------------------------
 # Main Dynamic Meal Generator
 # ------------------------------
 
@@ -457,6 +505,12 @@ def dynamic_meal_planner():
 
     # Display welcome message
     print("🍽 Welcome to your Friendly Neighborhood Foodgasm Kitchenator! 🍽\n")
+
+    # Ask if the user wants help
+    user_input = input("Type 'help' for instructions or press Enter to continue: ").strip().lower()
+    if user_input == "help":
+        display_help()
+        sys.exit()
 
     # Prompt user for their profile type and format the input
     user_type = input("Enter your profile (student, student-athlete, busy professional): ").strip().lower()
