@@ -460,7 +460,7 @@ def display_help():
     🍽 HOW TO USE KITCHENATOR 🍽
 
     1️⃣ Start the Kitchenator:
-       - Run the Python script: python kitchenator.py
+       - Run the Python script: Recipe Maker.py
 
     2️⃣ Enter Your Profile Type:
        - Choose one of the following:
